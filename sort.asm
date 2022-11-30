@@ -1,19 +1,19 @@
 .model  small
 .stack 100h
 .data
-a dw -1,54h,100h,-3				;unsorted array
+a dw -1,54h,100h,-3				        ;unsorted array
 N equ 4							;array length
 
 
 .code
-	mov	ax,	@data
-	mov	ds,	ax
+mov ax,@data
+mov ds,ax
 
-	push offset a
-	push N
-	call bubbleSort
+push offset a
+push N
+call bubbleSort
 	
-	.exit
+.exit
 ;gets 2 parameter - the offset of the signed word size array and its length, and sorts the array 
 ;if you want to change from signed to unsigned change the line "jle skipper" to "jbe skipper"
 bubbleSort proc near
